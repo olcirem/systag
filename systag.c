@@ -6,8 +6,8 @@
 #include "systag.h"
 #include "lbuf.h"
 
-static __dead 	void usage(int);
-static		void shell(FILE *, int);
+static void shell(FILE *, int);
+static void usage(int) __attribute__((__noreturn__));
 
 static char *prompt = "systag> ";
 
@@ -39,7 +39,7 @@ main(int argc, char *argv[])
 	exit(EXIT_SUCCESS);
 }
 
-__dead static void
+static void
 usage(int status)
 {
 	extern char *__progname;
